@@ -12,15 +12,21 @@ class Header extends React.Component  {
         Router.push('/login')
     }
 
+    toggleMenu = () => {
+        this.setState({isActive: !this.state.isActive})
+    }
+
     componentDidMount(){
         if(!this.props.user.email) Router.push('/login')
     }
 
     render(){
+        const {isActive} = this.state
+
         return (
             <div className="hero-head">
                 <Head>
-                    <title>Real Networking - {this.props.title}</title>
+                    <title>Boilerplate - {this.props.title}</title>
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
                     <link rel="stylesheet" href="/static/main.css" />
@@ -31,13 +37,13 @@ class Header extends React.Component  {
                             <a className="navbar-item">
                                 <img src="https://bulma.io/images/bulma-type.png" alt="Logo"/>
                             </a>
-                            <span className="navbar-burger burger" data-target="navbarMenuHeroB">
+                            <span className={`navbar-burger burger ${isActive ? 'is-active' : ''}`} data-target="navbarMenu">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </span>
                         </div>
-                        <div id="navbarMenuHeroB" className="navbar-menu">
+                        <div id="navbarMenu" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
                         <div className="navbar-end">
                             <a className="navbar-item is-active">Home</a>
                                 { this.props.user.email && 

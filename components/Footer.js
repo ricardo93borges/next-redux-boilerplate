@@ -5,7 +5,7 @@ const Footer = props => {
     return (
         <div className="hero-foot">
             <div className="container has-text-centered">
-                <p>Real Networking - 2019</p>
+                <p>Boilerplate - 2019</p>
             </div>
         </div>
     )
