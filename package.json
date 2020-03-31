@@ -21,7 +21,7 @@
   "dependencies": {
     "@babel/runtime-corejs2": "^7.5.0",
     "bulma": "^0.7.4",
-    "next": "^8.0.4",
+    "next": "^9.3.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^5.0.1",
